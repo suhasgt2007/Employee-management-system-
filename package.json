@@ -1,0 +1,30 @@
+{
+  "name": "employee-management-system",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend/react",
+    "frontend/angular"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n api,react -c green,cyan \"npm run dev:api\" \"npm run dev:react\"",
+    "dev:mock": "concurrently -k -n mock,react -c yellow,cyan \"npm run dev:mock-api\" \"npm run dev:mock --workspace @ems/react\"",
+    "dev:api": "npm run dev --workspace @ems/api",
+    "dev:mock-api": "npm run mock --workspace @ems/api",
+    "dev:react": "npm run dev --workspace @ems/react",
+    "dev:angular": "npm run dev --workspace @ems/angular",
+    "build:react": "npm run build --workspace @ems/react",
+    "build:angular": "npm run build --workspace @ems/angular"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true,
+    "esbuild@0.28.1": true,
+    "esbuild@0.25.12": true,
+    "@parcel/watcher@2.6.0": true,
+    "lmdb@3.4.2": true,
+    "msgpackr-extract@3.0.4": true
+  }
+}

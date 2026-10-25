@@ -1,0 +1,6 @@
+node_modules/
+data/
+frontend/react/dist/
+frontend/angular/dist/
+frontend/angular/.angular/
+npm-debug.log*
